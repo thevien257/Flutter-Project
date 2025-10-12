@@ -1,11 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:button/Widgets/navbar_widget.dart';
 import 'package:button/Widgets/FloatingActionButton_large.dart';
 import 'package:button/Widgets/FloatingActionButton_small.dart';
 import 'package:button/Widgets/FloatingActionButton.dart';
 import 'package:button/Widgets/FloatingActionButton_extended.dart';
 import 'package:button/pages/part1_page.dart';
-import 'package:button/pages/part2_page.dart';
-import 'package:flutter/material.dart';
+import 'package:button/pages/part2_page.dart'; // Part2Page imported here
 
 void main() {
   runApp(const MyFullApp());
@@ -86,33 +86,33 @@ class _MyHomePageState extends State<MyFullApp> {
 
   // Danh sách các trang
   List<Widget> get _pages => [
-    Part1Page(
-      nameController: _nameController,
-      emailController: _emailController,
-      nameError: _nameError,
-      emailError: _emailError,
-      likeCount: _likeCount,
-      onSubmit: _submitForm,
-      onLearnMore: () {
-        setState(() {
-          _result = '📋 Learn More clicked';
-        });
-      },
-      onClear: _clearForm,
-      onLike: () {
-        setState(() {
-          _likeCount++;
-          _result = '❤️ Liked! ($_likeCount)';
-        });
-      },
-      onShare: () {
-        setState(() {
-          _result = '📤 Share clicked';
-        });
-      },
-    ),
-    Part2Page(),
-  ];
+        Part1Page(
+          nameController: _nameController,
+          emailController: _emailController,
+          nameError: _nameError,
+          emailError: _emailError,
+          likeCount: _likeCount,
+          onSubmit: _submitForm,
+          onLearnMore: () {
+            setState(() {
+              _result = '📋 Learn More clicked';
+            });
+          },
+          onClear: _clearForm,
+          onLike: () {
+            setState(() {
+              _likeCount++;
+              _result = '❤️ Liked! ($_likeCount)';
+            });
+          },
+          onShare: () {
+            setState(() {
+              _result = '📤 Share clicked';
+            });
+          },
+        ),
+        const Part2Page(), // Part2Page is here
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -130,18 +130,18 @@ class _MyHomePageState extends State<MyFullApp> {
           elevation: 0,
           title: _result.isNotEmpty
               ? Container(
-                  padding: EdgeInsets.all(30),
+                  padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
                     color: Colors.blue.shade50,
                     borderRadius: BorderRadius.circular(30),
                   ),
                   child: Text(
                     _result,
-                    style: TextStyle(fontSize: 15, color: Colors.black87),
+                    style: const TextStyle(fontSize: 15, color: Colors.black87),
                     textAlign: TextAlign.center,
                   ),
                 )
-              : Text("Flutter Vien"),
+              : const Text("Flutter Vien"),
           centerTitle: true,
         ),
         body: _pages[currentIndex],
@@ -164,7 +164,7 @@ class _MyHomePageState extends State<MyFullApp> {
                       });
                     },
                   ),
-                  SizedBox(height: 15.0),
+                  const SizedBox(height: 15.0),
                   MyFloatingactionButton(
                     onPressed: () {
                       setState(() {
@@ -172,7 +172,7 @@ class _MyHomePageState extends State<MyFullApp> {
                       });
                     },
                   ),
-                  SizedBox(height: 15.0),
+                  const SizedBox(height: 15.0),
                   MyFloatingactionButton_large(
                     onPressed: () {
                       setState(() {
@@ -180,7 +180,7 @@ class _MyHomePageState extends State<MyFullApp> {
                       });
                     },
                   ),
-                  SizedBox(height: 15.0),
+                  const SizedBox(height: 15.0),
                   MyFloatingactionButton_extended(
                     onPressed: () {
                       setState(() {
