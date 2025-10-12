@@ -4,16 +4,12 @@ import 'MyIconButton.dart';
 class MyIconButtonsCard extends StatelessWidget {
   final VoidCallback onLike;
   final VoidCallback onShare;
-  final VoidCallback onBookmark;
-  final VoidCallback onComment;
   final int likeCount;
 
   const MyIconButtonsCard({
     super.key,
     required this.onLike,
     required this.onShare,
-    required this.onBookmark,
-    required this.onComment,
     required this.likeCount,
   });
 
@@ -49,16 +45,6 @@ class MyIconButtonsCard extends StatelessWidget {
                   icon: Icons.share,
                   color: Colors.blue,
                   onPressed: onShare,
-                ),
-                MyIconButton(
-                  icon: Icons.bookmark,
-                  color: Colors.orange,
-                  onPressed: onBookmark,
-                ),
-                MyIconButton(
-                  icon: Icons.comment,
-                  color: Colors.green,
-                  onPressed: onComment,
                 ),
               ],
             ),
